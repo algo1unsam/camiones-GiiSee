@@ -1,0 +1,27 @@
+import Camion.*
+import conjCosas.*
+import deposito.*
+
+test "El camion tiene cargado un paqueteLadrillos " {
+	camion.cargar(paqueteLadrillos)
+	assert.that(camion.tieneCarga(paqueteLadrillos))
+}
+
+test "El camion descargo un bumblebee " {
+	camion.descargarCosa(bumblebee)
+	assert.notThat(camion.tieneCarga(bumblebee))
+}
+
+test "La carga actual del camion es 0" {
+	bumblebee.peso()
+	paqueteLadrillos.peso()
+	paqueteLadrillos.cantLadrillos()
+	assert.equals(0, camion.cargaActual())
+}
+
+test "La carga disponible del camion es 802" {
+	knightRider.peso()
+	paqueteLadrillos.peso()
+	paqueteLadrillos.cantLadrillos()
+	assert.equals(500, camion.cargaDisponible())
+}
