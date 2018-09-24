@@ -10,6 +10,8 @@ object camion {
 		return cargas.contains(carga)
 	}
 
+	// TODO no valida la carga antes de cargar??
+	// todo elemento que se agrega debe ser removido del depósito 
 	method cargar(carga) {
 		cargas.add(carga)
 	}
@@ -19,6 +21,7 @@ object camion {
 	}
 
 	method cargaActual() {
+		// TODO acá quisiste poner cargas?
 		return cargas.sum{ carga => carga.peso() }
 	}
 
@@ -31,6 +34,7 @@ object camion {
 	}
 
 	method cosaMasPeligrosa() {
+		// TODO usar la lista!
 		return cargas.max({ carga => carga.peligrosidad() })
 	}
 

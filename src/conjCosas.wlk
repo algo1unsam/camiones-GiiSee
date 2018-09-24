@@ -12,6 +12,8 @@ object knightRider {
 object bumblebee {
 
 	var property peso = 800
+	// TODO acá lo mejor sería usar objetos, evitemos usar strings :)
+	// si usabas objetos, cada uno podría tener la info de la peligrosidad
 	var property forma =  'auto' 
 
 	method peligrosidad() {
@@ -38,4 +40,6 @@ object paqueteLadrillos {
 	method peligrosidad() = peligrosidad
 
 }
+
+// TODO falta el contenedor y el embalaje
 

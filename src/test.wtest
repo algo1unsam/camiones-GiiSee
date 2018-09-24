@@ -7,12 +7,18 @@ test "El camion tiene cargado un paqueteLadrillos " {
 	assert.that(camion.tieneCarga(paqueteLadrillos))
 }
 
+// TODO descargar no era parte del enunciado!
+// lo que si era parte era que una carga llega al depósito
+// pero nunca dice como, así que se asume que llega por parámetro una carga
+// y simplemente se agrega al depósito
 test "El camion descargo un bumblebee " {
 	camion.descargarCosa(bumblebee)
 	assert.notThat(camion.tieneCarga(bumblebee))
 }
 
 test "La carga actual del camion es 0" {
+	// TODO acá estos getters por qué los llamás acá?
+	// estos getters te devuelven información pero luego no usas, puede ser?
 	bumblebee.peso()
 	paqueteLadrillos.peso()
 	paqueteLadrillos.cantLadrillos()
@@ -20,8 +26,11 @@ test "La carga actual del camion es 0" {
 }
 
 test "La carga disponible del camion es 802" {
+	// TODO lo mismo acá, con los getters
 	knightRider.peso()
 	paqueteLadrillos.peso()
 	paqueteLadrillos.cantLadrillos()
+	// TODO acá veo que el camión nunca fue cargado, 500 es la carga total?
+	// tampoco coincide con lo que dice el nombre del test
 	assert.equals(500, camion.cargaDisponible())
 }
